@@ -1,0 +1,16 @@
+# MIZU Sensor Hub Dependencies
+# Python 3.8 or later required
+
+# GUI Framework
+customtkinter>=5.2.0
+
+# Serial Communication
+pyserial>=3.5
+
+# Database Dependencies
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+alembic>=1.12.0
+
+# Type Hints (for Python < 3.9)
+typing-extensions>=4.0.0; python_version < "3.9"
