@@ -5,6 +5,7 @@ This module handles all database operations including retrieving sensor data
 and managing database connections.
 """
 
+from datetime import datetime
 from typing import Optional, List
 from database_models import SensorData, get_db_session, init_database
 
@@ -118,10 +119,14 @@ class DatabaseManager:
         Returns:
             Formatted string starting with # and ending with ~
         """
-        # Format: #device_id=SENSOR001,ambient_temp=25.5,humidity=60.2,soil_moisture=45.8,soil_temp=22.1,wind_speed=5.2,longitude=-122.4194,latitude=37.7749~
+        # Format: #device_id=SENSOR001,timestamp=2024-01-15T10:30:00,ambient_temp=25.5,humidity=60.2,soil_moisture=45.8,soil_temp=22.1,wind_speed=5.2,longitude=-122.4194,latitude=37.7749~
+
+        # Format timestamp as ISO format string
+        timestamp_str = sensor_data.timestamp.isoformat() if sensor_data.timestamp else datetime.utcnow().isoformat()
 
         formatted_parts = [
             f"device_id={sensor_data.device_id}",
+            f"timestamp={timestamp_str}",
             f"ambient_temp={sensor_data.ambient_temperature or 0.0}",
             f"humidity={sensor_data.humidity or 0.0}",
             f"soil_moisture={sensor_data.soil_moisture or 0.0}",
