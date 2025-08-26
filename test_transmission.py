@@ -38,8 +38,8 @@ def test_database_operations():
             'soil_moisture': 45.8,
             'soil_temperature': 22.1,
             'wind_speed': 5.2,
-            'longitude': -122.4194,
-            'latitude': 37.7749,
+            'ambient_light': 500.0,
+            'uv_light': 0.8,
             'transmitted': False
         },
         {
@@ -49,8 +49,8 @@ def test_database_operations():
             'soil_moisture': 52.1,
             'soil_temperature': 24.8,
             'wind_speed': 3.8,
-            'longitude': -122.4200,
-            'latitude': 37.7750,
+            'ambient_light': 480.0,
+            'uv_light': 0.7,
             'transmitted': False
         },
         {
@@ -60,8 +60,8 @@ def test_database_operations():
             'soil_moisture': 38.9,
             'soil_temperature': 20.5,
             'wind_speed': 7.1,
-            'longitude': -122.4188,
-            'latitude': 37.7748,
+            'ambient_light': 520.0,
+            'uv_light': 0.9,
             'transmitted': False
         }
     ]

@@ -119,7 +119,7 @@ class DatabaseManager:
         Returns:
             Formatted string starting with # and ending with ~
         """
-        # Format: #device_id=SENSOR001,timestamp=2024-01-15T10:30:00,ambient_temp=25.5,humidity=60.2,soil_moisture=45.8,soil_temp=22.1,wind_speed=5.2,longitude=-122.4194,latitude=37.7749~
+        # Format: #device_id=SENSOR001,timestamp=2024-01-15T10:30:00,ambient_temp=25.5,humidity=60.2,soil_moisture=45.8,soil_temp=22.1,wind_speed=5.2,ambient_light=500.0,uv_light=0.8~
 
         # Format timestamp as ISO format string
         timestamp_str = sensor_data.timestamp.isoformat() if sensor_data.timestamp else datetime.utcnow().isoformat()
@@ -132,8 +132,8 @@ class DatabaseManager:
             f"soil_moisture={sensor_data.soil_moisture or 0.0}",
             f"soil_temp={sensor_data.soil_temperature or 0.0}",
             f"wind_speed={sensor_data.wind_speed or 0.0}",
-            f"longitude={sensor_data.longitude or 0.0}",
-            f"latitude={sensor_data.latitude or 0.0}"
+            f"ambient_light={sensor_data.ambient_light or 0.0}",
+            f"uv_light={sensor_data.uv_light or 0.0}"
         ]
 
         return f"#{','.join(formatted_parts)}~"

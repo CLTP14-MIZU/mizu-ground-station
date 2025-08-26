@@ -34,22 +34,22 @@ def test_data_parsing(db_manager):
         # JSON format
         {
             "name": "JSON Format",
-            "data": '{"device_id": "TEST001", "ambient_temp": 25.5, "humidity": 60.2, "soil_moisture": 45.8, "soil_temp": 22.1, "wind_speed": 5.2, "longitude": -122.4194, "latitude": 37.7749}'
+            "data": '{"device_id": "TEST001", "ambient_temp": 25.5, "humidity": 60.2, "soil_moisture": 45.8, "soil_temp": 22.1, "wind_speed": 5.2, "ambient_light": 500.0, "uv_light": 0.8}'
         },
         # CSV format
         {
             "name": "CSV Format",
-            "data": "TEST002,26.1,58.9,42.3,23.5,4.8,-122.4194,37.7749"
+            "data": "TEST002,26.1,58.9,42.3,23.5,4.8,480.0,0.7"
         },
         # Key-value format
         {
             "name": "Key-Value Format",
-            "data": "device_id=TEST003,ambient_temp=24.8,humidity=62.1,soil_moisture=48.2,soil_temp=21.9,wind_speed=6.1,longitude=-122.4194,latitude=37.7749"
+            "data": "device_id=TEST003,ambient_temp=24.8,humidity=62.1,soil_moisture=48.2,soil_temp=21.9,wind_speed=6.1,ambient_light=520.0,uv_light=0.9"
         },
         # Generic format (numbers only)
         {
             "name": "Generic Format",
-            "data": "TEST004 27.3 55.6 39.7 24.2 3.9 -122.4194 37.7749"
+            "data": "TEST004 27.3 55.6 39.7 24.2 3.9 450.0 0.6"
         }
     ]
 
@@ -73,7 +73,7 @@ def test_database_save(db_manager):
     print("\nTesting database save...")
 
     # Test data
-    test_data = '{"device_id": "SAVE_TEST", "ambient_temp": 25.0, "humidity": 60.0, "soil_moisture": 45.0, "soil_temp": 22.0, "wind_speed": 5.0, "longitude": -122.4194, "latitude": 37.7749}'
+    test_data = '{"device_id": "SAVE_TEST", "ambient_temp": 25.0, "humidity": 60.0, "soil_moisture": 45.0, "soil_temp": 22.0, "wind_speed": 5.0, "ambient_light": 500.0, "uv_light": 0.8}'
 
     print(f"  Input: {test_data}")
 

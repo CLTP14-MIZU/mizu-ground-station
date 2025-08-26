@@ -18,7 +18,7 @@ class SensorData(Base):
     Model for storing sensor data in the database.
 
     This table stores all sensor readings including device ID,
-    environmental measurements, geolocation, and transmission status.
+    environmental measurements, and transmission status.
     """
     __tablename__ = 'mizu_sensor_hub'
 
@@ -29,8 +29,8 @@ class SensorData(Base):
     soil_moisture = Column(Float, nullable=True)
     soil_temperature = Column(Float, nullable=True)
     wind_speed = Column(Float, nullable=True)
-    longitude = Column(Float, nullable=True)
-    latitude = Column(Float, nullable=True)
+    ambient_light = Column(Float, nullable=True)
+    uv_light = Column(Float, nullable=True)
     transmitted = Column(Boolean, default=False, nullable=False)
     timestamp = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)
 
